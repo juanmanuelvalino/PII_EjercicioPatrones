@@ -58,6 +58,15 @@ class BaseDeDatos: IDataBaseObject, IBaseDeDatos
 }
 class AnlizadorDatos
 {
+    public bool Cumplecondicion(IDataBaseObject DBobj)
+    {
+        //Devuelve true si se cumple una cierta condición
+    }
+}
+//Se separa la clase de análisis de la clase de devolución de datos para cumplir SRP
+class ResultadoAnalisis
+{
+    public AnlizadorDatos analisis {get;}
     private IBaseDeDatos baseDatos{get; set;};
     public void Analizar()
     {
@@ -73,15 +82,6 @@ class AnlizadorDatos
             }
         }
     }
-    public bool Cumplecondicion(IDataBaseObject DBobj)
-    {
-        //Devuelve true si se cumple una cierta condición
-    }
-}
-//Se separa la clase de análisis de la clase de devolución de datos para cumplir SRP
-class ResultadoAnalisis
-{
-    public AnlizadorDatos analisis {get;}
     public void MensajeUno()
     { /*Mensaje predeterminado*/ }
     public void MensajeDos()
