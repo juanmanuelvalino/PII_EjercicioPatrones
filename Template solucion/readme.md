@@ -72,7 +72,7 @@ class ResultadoAnalisis
     {
         foreach (IDataBaseObject DBObj in baseDatos.ListarDatos())
         {
-            if (CumpleCondicion(DBObj))
+            if (analisis.CumpleCondicion(DBObj))
             {
                 MensajeUno();
             }
